@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 const DB = require("../../models");
 const bcrypt = require("bcrypt");
+const Op = require('sequelize').Op;
+
 
 module.exports = {
     getUsers: (req, res) => {
@@ -11,7 +13,7 @@ module.exports = {
             DB.User.findAll({
                 where: {
                     name: {
-                        [Op.iLike] : `%${name}`
+                        [Op.like] : `%${name}%`
                     }
                 }
             })
