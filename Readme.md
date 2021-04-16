@@ -32,6 +32,7 @@ List of routes:
 | `/api/v1/users/:id`    | GET     | Get single user              |
 | `/api/v1/users`    | POST  | Create new user              |
 | `/api/v1/users/:id`    | PUT  | Update data user              |
+| `/api/v1/users/:id`    | DELETE  | Remove user              |
 
 List of filter routes:
 

@@ -79,12 +79,33 @@ module.exports = {
         const id = req.params.id;
         DB.User.findByPk(id)
         .then(user => {
-            return user.update(req.body)
+            return user.update(req.body);
         })
         .then(user => {
             res.status(201).json({
                 message: 'Update data success',
                 user
+            })
+        })
+        .catch(err => {
+            res.status(500).json({
+                message: err.message
+            })
+        })
+    },
+
+    remove: (req, res) => {
+        const id = req.params.id;
+
+        DB.User.findByPk(id)
+        .then(user => {
+            dataUser = user;
+            return user.destroy();
+        })
+        .then(user => {
+            res.status(201).json({
+                message: 'Delete data success',
+                user: dataUser
             })
         })
         .catch(err => {
