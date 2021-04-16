@@ -30,7 +30,7 @@ With only npm:
 npm install
 npm start 
 
-#development
+# development mode
 npm run dev
 ```
 
