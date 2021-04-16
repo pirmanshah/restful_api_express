@@ -17,7 +17,7 @@ Database seed:
 npx sequelize-cli db:seed:all
 ```
 
-### REST API
+### API Methods
 List of basic routes:
 
 | Route | HTTP     | Descriptions|
