@@ -4,6 +4,19 @@
 
 Build Restful API using [NodeJs](http://nodejs.org) & [Express](http://expressjs.com/).
 
+### SETUP DATABASE
+Database migration:
+
+```bash
+npx sequelize-cli db:migrate
+```
+
+Database seed:
+
+```bash
+npx sequelize-cli db:seed:all
+```
+
 ### REST API
 List of basic routes:
 
