@@ -1,4 +1,3 @@
-const jwt = require("jsonwebtoken");
 const DB = require("../../models");
 const Op = require('sequelize').Op;
 const bcrypt = require("bcrypt");
@@ -48,10 +47,16 @@ module.exports = {
 
         DB.User.findByPk(id)
         .then(user => {
-            res.status(200).json({
-                message: `Success get data user with id: ${id}`,
-                user
-            })
+            if(user){
+                res.status(200).json({
+                    message: `Success get data user with id: ${id}`,
+                    user
+                });
+            } else{
+                res.status(404).json({
+                    message: 'User Not Found',
+                });
+            }
         })
         .catch(err => {
             res.status(500).json({
@@ -61,12 +66,21 @@ module.exports = {
     },
 
     insert: (req, res) => {
-        DB.User.create(req.body)
+        bcrypt.hash(req.body.password, 12)
+        .then(hash => {
+           return DB.User.create({
+                id: req.body.id,
+                name: req.body.name,
+                email: req.body.email,
+                password: hash,
+                role: req.body.role
+            })
+        })
         .then(user => {
             res.status(201).json({
                 message: 'Insert data success',
                 user
-            })
+            });
         })
         .then(err => {
             res.status(500).json({
@@ -99,14 +113,22 @@ module.exports = {
 
         DB.User.findByPk(id)
         .then(user => {
-            dataUser = user;
-            return user.destroy();
+            if(user){
+                dataUser = user;
+                return user.destroy();
+            } else {
+                res.status(404).json({
+                    message: 'User Not Found',
+                });
+            }
         })
         .then(user => {
-            res.status(201).json({
-                message: 'Delete data success',
-                user: dataUser
-            })
+            if(user){
+                res.status(201).json({
+                    message: 'Delete data success',
+                    user: dataUser
+                })
+            }
         })
         .catch(err => {
             res.status(500).json({
