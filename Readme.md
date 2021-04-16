@@ -4,7 +4,7 @@
 
 Build Restful API using [NodeJs](http://nodejs.org) & [Express](http://expressjs.com/).
 
-### REST api
+### REST API
 List of basic routes:
 
 | Route | HTTP     | Descriptions|
