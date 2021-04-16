@@ -13,6 +13,7 @@ const indexRouter = require("./routes/index.routes");
 
 //routes
 app.use('/api/v1', indexRouter);
+app.use('/', indexRouter);
 app.use('*', (req, res)=> {
     res.status(404).json({
         status: 404,

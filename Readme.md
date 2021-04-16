@@ -29,6 +29,9 @@ List of routes:
 | Route           | HTTP    | Descriptions                    |
 | :-------------  | :------ | :------------------------------ |
 | `/api/v1/users`    | GET     | Get all the users               |
+| `/api/v1/users/:id`    | GET     | Get single user              |
+| `/api/v1/users`    | POST  | Create new user              |
+| `/api/v1/users/:id`    | PUT  | Update data user              |
 
 List of filter routes:
 
