@@ -1,5 +1,5 @@
 const DB = require("../../models");
-const Op = require('sequelize').Op;
+const Op = require("sequelize").Op;
 const bcrypt = require("bcrypt");
 
 module.exports = {
@@ -48,10 +48,7 @@ module.exports = {
         DB.User.findByPk(id)
         .then(user => {
             if(user){
-                res.status(200).json({
-                    message: `Success get data user with id: ${id}`,
-                    user
-                });
+                res.status(200).json(user);
             } else{
                 res.status(404).json({
                     message: 'User Not Found',

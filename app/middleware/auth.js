@@ -3,13 +3,13 @@ const jwt = require('jsonwebtoken');
 module.exports = {
   isAuth: (req, res, next) => {
         try {
-            const token = req.headers.token;
+            const token = req.headers["x-access-token"];
             let decoded = jwt.verify(token, process.env.SECRET);
             req.user = decoded;
             next();
         } catch(err) {
             res.status(401).json({
-                message: 'Token is Invalid'
+                message: err.message
             });
         }
     },
