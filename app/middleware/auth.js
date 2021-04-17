@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken');
 module.exports = {
   isAuth: (req, res, next) => {
         try {
-            const token = req.headers["x-access-token"];
+            const authHeader = req.headers['authorization']
+            const token = authHeader && authHeader.split(' ')[1];
             let decoded = jwt.verify(token, process.env.SECRET);
             req.user = decoded;
             next();
