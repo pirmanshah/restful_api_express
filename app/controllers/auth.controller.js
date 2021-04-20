@@ -40,7 +40,10 @@ module.exports = {
                     id: user.id,
                     role: user.role
                 }, 
-                    process.env.SECRET
+                    process.env.SECRET,
+                    { 
+                        expiresIn: '1800s'
+                    }
                 );
 
                 if(token){
@@ -60,5 +63,13 @@ module.exports = {
                 message: err.message
             });
         })
+    },
+
+    logout: (req, res) => {
+        const authHeader = req.headers['authorization']
+        const token = '';
+        res.status(200).json({
+            message: 'Logout Success'
+        });
     }
 }

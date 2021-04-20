@@ -71,7 +71,7 @@ module.exports = {
                 email: req.body.email,
                 password: hash,
                 role: req.body.role
-            })
+            });
         })
         .then(user => {
             res.status(201).json({
@@ -82,7 +82,7 @@ module.exports = {
         .then(err => {
             res.status(500).json({
                 message: err.message
-            })
+            });
         })
     },
 
@@ -96,12 +96,12 @@ module.exports = {
             res.status(201).json({
                 message: 'Update data success',
                 user
-            })
+            });
         })
         .catch(err => {
             res.status(500).json({
                 message: err.message
-            })
+            });
         })
     },
 
@@ -124,13 +124,13 @@ module.exports = {
                 res.status(201).json({
                     message: 'Delete data success',
                     user: dataUser
-                })
+                });
             }
         })
         .catch(err => {
             res.status(500).json({
                 message: err.message
-            })
+            });
         })
     }
 }

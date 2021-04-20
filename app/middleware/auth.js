@@ -10,7 +10,7 @@ module.exports = {
             next();
         } catch(err) {
             res.status(401).json({
-                message: err.message
+                message: 'Token is invalid'
             });
         }
     },
