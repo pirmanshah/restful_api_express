@@ -41,14 +41,10 @@ List of filter routes:
 | `/api/v1/users?name="{name}"`| GET | Get `{name}` match in users |
 | `/api/v1/users?name="{na}"`| GET | Get `{na}` like in users |
 ---
-### Usage
-With only npm:
-```
-npm install
-npm start 
 
-# development mode
-npm run dev
-```
+# How to Use
+You need [Node.js](https://nodejs.org) installed on your machine. Simply download the installer from [nodejs.org](https://nodejs.org) and go through the installation steps.
 
-Access the website via `http://localhost:3000` or API via `http://localhost:3000/api/v1`.
+Once Node.js is installed, open your command prompt or terminal and **navigate into this project folder**. There, run `npm install` to install all required dependencies.
+
+Finally, run `npm start` to start the development server and visit `http://localhost:3000` or API via `http://localhost:3000/api/v1`.
