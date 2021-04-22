@@ -5,7 +5,7 @@
 Build Restful API using [NodeJs](http://nodejs.org), [Express](http://expressjs.com/) & [MySQL](https://www.mysql.com/).
 
 ### How to Use
-Create a .env file in then root and add the following:
+Create a .env file in root project folder and add the following:
 
 ```bash
 PORT=your port
