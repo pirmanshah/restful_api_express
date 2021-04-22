@@ -4,6 +4,20 @@
 
 Build Restful API using [NodeJs](http://nodejs.org), [Express](http://expressjs.com/) & [MySQL](https://www.mysql.com/).
 
+### How to Use
+Create a .env file in then root and add the following:
+
+```bash
+PORT=your port
+SECRET=your secret key
+```
+
+You need [Node.js](https://nodejs.org) installed on your machine. Simply download the installer from [nodejs.org](https://nodejs.org) and go through the installation steps.
+
+Once Node.js is installed, open your command prompt or terminal and **navigate into this project folder**. There, run `npm install` to install all required dependencies.
+
+Finally, run `npm start` to start the development server and visit `http://localhost:3000` or with API via `http://localhost:3000/api/v1`.
+
 ### SETUP DATABASE
 Database migration:
 
@@ -42,9 +56,4 @@ List of filter routes:
 | `/api/v1/users?name="{na}"`| GET | Get `{na}` like in users |
 ---
 
-### How to Use
-You need [Node.js](https://nodejs.org) installed on your machine. Simply download the installer from [nodejs.org](https://nodejs.org) and go through the installation steps.
 
-Once Node.js is installed, open your command prompt or terminal and **navigate into this project folder**. There, run `npm install` to install all required dependencies.
-
-Finally, run `npm start` to start the development server and visit `http://localhost:3000` or with API via `http://localhost:3000/api/v1`.
