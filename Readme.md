@@ -12,13 +12,26 @@ PORT=your port
 SECRET=your secret key
 ```
 
+Setup configuration database, navigate into folder `config`:
+
+```bash
+{
+  "development": {
+    "username": "root",
+    "password": "YourPassword",
+    "database": "restful_api_express",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+}
+```
+
 You need [Node.js](https://nodejs.org) installed on your machine. Simply download the installer from [nodejs.org](https://nodejs.org) and go through the installation steps.
 
 Once Node.js is installed, open your command prompt or terminal and **navigate into this project folder**. There, run `npm install` to install all required dependencies.
 
 Finally, run `npm start` to start the development server and visit `http://localhost:3000` or with API via `http://localhost:3000/api/v1`.
 
-### SETUP DATABASE
+### Seed Database
 Database migration:
 
 ```bash
