@@ -2,7 +2,7 @@
 
 # REST API with Express
 
-Build Restful API using [NodeJs](http://nodejs.org) & [Express](http://expressjs.com/).
+Build Restful API using [NodeJs](http://nodejs.org), [Express](http://expressjs.com/) & [MySQL](https://www.mysql.com/).
 
 ### SETUP DATABASE
 Database migration:
